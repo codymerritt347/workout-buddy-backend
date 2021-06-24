@@ -2,10 +2,8 @@ class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:show, :update, :destroy]
 
   def index
-    @workouts = Workout.all
-    options = {}
-    options[:include] = [:exercises]
-    render json: WorkoutSerializer.new(@workouts, options)
+    workouts = Workout.all
+    render json: workouts
   end
 
   def show
@@ -13,12 +11,12 @@ class WorkoutsController < ApplicationController
   end
 
   def create
-    @workout = Workout.new(workout_params)
+    workout = Workout.new(workout_params)
 
-    if @workout.save
-      render json: @workout, status: :created, location: @workout
+    if workout.save
+      render json: workout, status: :created, location: workout
     else
-      render json: @workout.errors, status: :unprocessable_entity
+      render json: workout.errors, status: :unprocessable_entity
     end
   end
 

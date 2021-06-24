@@ -4,7 +4,7 @@ class WorkoutsController < ApplicationController
   def index
     @workouts = Workout.all
 
-    render json: @workouts, only: [:id, :name, :created_at], include: {exercises: {except: [:id, :created_at, :updated_at]}}
+    render json: @workouts, only: [:id, :name, :created_at], include: {exercises: {except: [:id, :created_at, :updated_at, :workout_id]}}
   end
 
   def show

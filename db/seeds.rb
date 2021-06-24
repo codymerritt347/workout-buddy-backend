@@ -5,13 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+workout = Workout.create(name: "Monday")
+Workout.create(name: "Tuesday")
+Workout.create(name: "Wednesday")
+Workout.create(name: "Thursday")
+Workout.create(name: "Friday")
+Workout.create(name: "Saturday")
+Workout.create(name: "Sunday")
 
-workouts = ["Monday", "Tuesday", "Thursday", "Friday", "Quick", "Cardio"]
-workouts.each do |workout|
-  Workout.create(name: workout)
-end
-
-Exercise.create(name: "Bench Press", target: "chest", equipment: "barbell")
-Exercise.create(name: "Hack Squat", target: "glutes", equipment: "smith machine")
-Exercise.create(name: "Dumbbell Curl", target: "biceps", equipment: "dumbbell")
-
+Exercise.create(name: "bench press", target: "chest", equipment: "barbell", weight: 100, unit: "lbs", reps: 12, sets: 3, workout_id: 1)

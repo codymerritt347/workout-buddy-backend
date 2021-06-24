@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+workouts = ["Monday", "Tuesday", "Thursday", "Friday", "Quick", "Cardio"]
+workouts.each do |workout|
+  Workout.create(name: workout)
+end
+
+Exercise.create(name: "Bench Press", target: "chest", equipment: "barbell")
+Exercise.create(name: "Hack Squat", target: "glutes", equipment: "smith machine")
+Exercise.create(name: "Dumbbell Curl", target: "biceps", equipment: "dumbbell")
+

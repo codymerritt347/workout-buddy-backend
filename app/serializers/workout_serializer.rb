@@ -1,5 +1,5 @@
 class WorkoutSerializer < ActiveModel::Serializer
   # include JSONAPI::Serializer
-  attributes :created_at, :name
+  attributes :day, :length, :where
   has_many :exercises
 end
